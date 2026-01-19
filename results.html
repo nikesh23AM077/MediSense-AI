@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your AI-powered disease prediction results">
+    <title>Results - MediSense AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">🏥</span>
+                MediSense AI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="symptom-checker.html">Symptom Checker</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Results Section -->
+    <section class="section">
+        <div class="results-container">
+            <h1 class="text-center">Your Health Analysis</h1>
+            <p class="text-center"
+                style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem; color: var(--text-secondary);">
+                Based on the symptoms you provided, here are the AI-powered predictions
+            </p>
+
+            <!-- Results will be rendered here -->
+            <div id="results-content">
+                <!-- JavaScript will populate this -->
+            </div>
+
+            <!-- Important Disclaimer -->
+            <div class="disclaimer">
+                <div style="text-align: center;">
+                    <div class="disclaimer-icon">⚠️</div>
+                    <h2 style="color: var(--warning); margin-bottom: 1rem;">Important Medical Disclaimer</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 1rem;">
+                        <strong>This is an AI prediction and NOT a medical diagnosis.</strong>
+                    </p>
+                    <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                        These results are for informational purposes only. They should not replace professional medical
+                        advice, diagnosis, or treatment. If you're experiencing these symptoms, especially if they're
+                        severe or worsening, please consult a qualified healthcare provider immediately.
+                    </p>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
+                        🚨 In case of emergency, call your local emergency services immediately.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <div class="hero-buttons">
+                    <a href="chatbot.html" class="btn btn-primary">New Analysis with Chatbot</a>
+                    <a href="symptom-checker.html" class="btn btn-secondary">New Analysis with Checker</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); padding: 3rem 0; text-align: center; margin-top: 3rem;">
+        <div class="container">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                <strong>Disclaimer:</strong> MediSense AI is for informational purposes only and is not a substitute for
+                professional medical advice, diagnosis, or treatment.
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.875rem;">
+                &copy; 2026 MediSense AI. All rights reserved. | Always consult with a qualified healthcare provider.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Display results on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            displayResults();
+        });
+
+        function displayResults() {
+            const resultsContainer = document.getElementById('results-content');
+            const predictions = getPrediction();
+
+            if (!predictions || predictions.length === 0) {
+                resultsContainer.innerHTML = `
+          <div class="card text-center">
+            <h2 style="color: var(--text-secondary);">No Results Available</h2>
+            <p style="margin-top: 1rem;">Please use the Symptom Checker or AI Chatbot to analyze your symptoms.</p>
+            <div style="margin-top: 2rem;">
+              <a href="chatbot.html" class="btn btn-primary" style="margin-right: 1rem;">Use Chatbot</a>
+              <a href="symptom-checker.html" class="btn btn-secondary">Use Symptom Checker</a>
+            </div>
+          </div>
+        `;
+                return;
+            }
+
+            // Render each prediction
+            let resultsHTML = '';
+
+            predictions.forEach((prediction, index) => {
+                const rankEmoji = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉';
+                const confidenceColor = prediction.confidence > 70 ? 'var(--success)' :
+                    prediction.confidence > 50 ? 'var(--warning)' :
+                        'var(--info)';
+
+                resultsHTML += `
+          <div class="card prediction-card">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+              <div>
+                <h2 style="color: var(--primary-blue); margin-bottom: 0.5rem;">
+                  ${rankEmoji} ${prediction.disease}
+                </h2>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">
+                  Matched ${prediction.matchedSymptoms} of ${prediction.totalSymptoms} typical symptoms
+                </p>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 2rem; font-weight: 700; color: ${confidenceColor};">
+                  ${Math.round(prediction.confidence)}%
+                </div>
+                <div style="font-size: 0.875rem; color: var(--text-muted);">Confidence</div>
+              </div>
+            </div>
+
+            <div class="confidence-bar">
+              <div class="confidence-fill" style="width: 0%; background: linear-gradient(90deg, ${confidenceColor}, ${confidenceColor}80);"></div>
+            </div>
+            <div class="confidence-label">
+              <span>Match Quality</span>
+              <span>${Math.round(prediction.confidence)}%</span>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">💡 Health Recommendations</h3>
+              <ul class="recommendation-list">
+                ${prediction.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <h3 style="color: var(--accent-teal); margin-bottom: 1rem;">💊 Medication Suggestions</h3>
+              <div style="background: var(--bg-secondary); border-radius: 0.75rem; padding: 1.5rem;">
+                <p style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-muted);">
+                  <strong>Note:</strong> These are common medications for this condition. Always consult a doctor before taking any medication.
+                </p>
+                <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                  ${prediction.medications.map(med => `<li>${med}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+            });
+
+            resultsContainer.innerHTML = resultsHTML;
+
+            // Animate confidence bars
+            setTimeout(() => {
+                document.querySelectorAll('.confidence-fill').forEach((bar, index) => {
+                    animateConfidenceBar(bar, predictions[index].confidence);
+                });
+            }, 200);
+        }
+    </script>
+</body>
+
+</html>

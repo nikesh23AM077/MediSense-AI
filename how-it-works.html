@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Understand how MediSense AI uses machine learning to predict diseases from symptoms">
+    <title>How It Works - MediSense AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">🏥</span>
+                MediSense AI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="symptom-checker.html">Symptom Checker</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- How It Works Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">How MediSense AI Works</h1>
+            <p class="text-center" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 3rem;">
+                Understanding the technology behind intelligent disease prediction
+            </p>
+
+            <!-- Process Overview -->
+            <div class="grid grid-3" style="margin-bottom: 3rem;">
+                <div class="card card-glass" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
+                    <h3 style="color: var(--primary-blue);">Step 1: Input</h3>
+                    <p>You describe your symptoms through our chatbot or symptom checker interface</p>
+                </div>
+
+                <div class="card card-glass" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
+                    <h3 style="color: var(--accent-cyan);">Step 2: Analysis</h3>
+                    <p>Our AI algorithms process and analyze your symptoms against medical databases</p>
+                </div>
+
+                <div class="card card-glass" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="color: var(--accent-teal);">Step 3: Results</h3>
+                    <p>You receive predictions with confidence scores and recommendations</p>
+                </div>
+            </div>
+
+            <!-- Technology Explained -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1.5rem;">The Technology Behind MediSense AI</h2>
+
+                <h3 style="color: var(--accent-cyan); margin-top: 2rem;">🧠 Machine Learning Algorithm</h3>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Our system uses sophisticated pattern recognition to match your symptoms with known medical
+                    conditions.
+                    The AI has been trained on thousands of symptom-disease combinations to identify the most likely
+                    conditions
+                    based on your specific symptom profile.
+                </p>
+
+                <h3 style="color: var(--accent-cyan); margin-top: 2rem;">📚 Medical Knowledge Base</h3>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    We maintain a comprehensive database of diseases, their common symptoms, recommended treatments, and
+                    medication options. This knowledge base is continuously updated to reflect the latest medical
+                    information.
+                </p>
+
+                <h3 style="color: var(--accent-cyan); margin-top: 2rem;">🎯 Confidence Scoring</h3>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Each prediction comes with a confidence score calculated based on:
+                </p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;">
+                    <li>Number of matching symptoms</li>
+                    <li>Severity and specificity of symptoms</li>
+                    <li>Common symptom combinations for each condition</li>
+                    <li>Statistical probability based on medical data</li>
+                </ul>
+
+                <h3 style="color: var(--accent-cyan); margin-top: 2rem;">💡 Natural Language Processing</h3>
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Our chatbot uses natural language processing to understand your descriptions in everyday language.
+                    You don't need medical terminology – just describe how you feel naturally, and the AI will extract
+                    the relevant medical information.
+                </p>
+            </div>
+
+            <!-- Two Input Methods -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Two Ways to Input Symptoms</h2>
+
+                <div class="grid grid-2">
+                    <div style="border: 2px solid var(--border-color); border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="color: var(--accent-cyan);">💬 AI Chatbot</h3>
+                        <p><strong>Best for:</strong> Natural conversation and complex symptom descriptions</p>
+                        <p style="margin-top: 1rem;">The chatbot engages in a dialogue, asking follow-up questions to
+                            gather
+                            comprehensive information about your condition. It's like talking to a doctor, but available
+                            24/7.</p>
+                        <a href="chatbot.html" class="btn btn-primary"
+                            style="margin-top: 1rem; display: inline-block;">Try Chatbot</a>
+                    </div>
+
+                    <div style="border: 2px solid var(--border-color); border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="color: var(--accent-teal);">✅ Symptom Checker</h3>
+                        <p><strong>Best for:</strong> Quick selection from organized symptom lists</p>
+                        <p style="margin-top: 1rem;">Browse symptoms organized by body system and check all that apply.
+                            This structured approach is faster if you already know exactly what symptoms you're
+                            experiencing.</p>
+                        <a href="symptom-checker.html" class="btn btn-secondary"
+                            style="margin-top: 1rem; display: inline-block;">Use Checker</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What You'll Receive -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1.5rem;">What You'll Receive</h2>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: var(--accent-cyan);">📋 Disease Predictions</h3>
+                    <p>Up to three most likely conditions ranked by confidence score</p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: var(--accent-cyan);">📊 Confidence Scores</h3>
+                    <p>Percentage indicating how well your symptoms match each predicted condition</p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: var(--accent-cyan);">💡 Health Recommendations</h3>
+                    <p>Practical self-care steps and lifestyle modifications for your condition</p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: var(--accent-cyan);">💊 Medication Suggestions</h3>
+                    <p>Common over-the-counter and prescription medications (for informational purposes only)</p>
+                </div>
+            </div>
+
+            <!-- Limitations -->
+            <div class="disclaimer">
+                <div style="text-align: center;">
+                    <div class="disclaimer-icon">⚠️</div>
+                    <h2 style="color: var(--warning); margin-bottom: 1rem;">Important Limitations</h2>
+                    <div style="text-align: left; max-width: 700px; margin: 0 auto;">
+                        <p style="margin-bottom: 1rem;"><strong>This system cannot:</strong></p>
+                        <ul style="margin-left: 2rem; color: var(--text-secondary);">
+                            <li>Replace a professional medical examination</li>
+                            <li>Perform laboratory tests or imaging studies</li>
+                            <li>Prescribe medications or treatments</li>
+                            <li>Handle medical emergencies</li>
+                            <li>Consider your complete medical history</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;"><strong>Always consult a healthcare professional for:</strong>
+                        </p>
+                        <ul style="margin-left: 2rem; color: var(--text-secondary);">
+                            <li>Accurate diagnosis and treatment plans</li>
+                            <li>Severe or worsening symptoms</li>
+                            <li>Chronic conditions or recurring issues</li>
+                            <li>Prescription medications</li>
+                            <li>Any health concerns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center" style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Ready to Analyze Your Symptoms?</h3>
+                <div class="hero-buttons">
+                    <a href="chatbot.html" class="btn btn-primary">Start AI Chat</a>
+                    <a href="symptom-checker.html" class="btn btn-secondary">Use Symptom Checker</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                <strong>Disclaimer:</strong> MediSense AI is for informational purposes only and is not a substitute for
+                professional medical advice, diagnosis, or treatment.
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.875rem;">
+                &copy; 2026 MediSense AI. All rights reserved. | Always consult with a qualified healthcare provider.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

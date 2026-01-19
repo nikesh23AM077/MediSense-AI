@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Select your symptoms from organized categories for AI analysis">
+    <title>Symptom Checker - MediSense AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">🏥</span>
+                MediSense AI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="symptom-checker.html">Symptom Checker</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Symptom Checker Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">Symptom Checker</h1>
+            <p class="text-center" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 3rem;">
+                Select all symptoms you're experiencing from the categories below
+            </p>
+
+            <form id="symptom-form">
+                <!-- Additional Information -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label" for="duration">How long have you had these symptoms?</label>
+                            <select class="form-select" id="duration">
+                                <option value="">Select duration...</option>
+                                <option value="less-than-1-day">Less than 1 day</option>
+                                <option value="1-3-days">1-3 days</option>
+                                <option value="4-7-days">4-7 days</option>
+                                <option value="1-2-weeks">1-2 weeks</option>
+                                <option value="more-than-2-weeks">More than 2 weeks</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="severity">How severe are your symptoms?</label>
+                            <select class="form-select" id="severity">
+                                <option value="">Select severity...</option>
+                                <option value="mild">Mild - Noticeable but not interfering much</option>
+                                <option value="moderate">Moderate - Affecting daily activities</option>
+                                <option value="severe">Severe - Significantly impacting life</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Symptom Categories -->
+                <div class="card">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Select Your Symptoms</h2>
+                    <div id="symptom-categories">
+                        <!-- Categories will be rendered here by JavaScript -->
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem;">
+                        <button type="submit" class="btn btn-primary" style="min-width: 200px;">
+                            Analyze Symptoms
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="clearSelections()">
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Tips -->
+            <div class="card" style="margin-top: 2rem;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">💡 Selection Tips</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Select all symptoms you're currently experiencing, even mild ones</li>
+                    <li>Symptoms are organized by body system for easier selection</li>
+                    <li>You can select symptoms from multiple categories</li>
+                    <li>Be thorough - more symptoms lead to more accurate predictions</li>
+                    <li>Don't worry about selecting too many - the AI will analyze all of them</li>
+                </ul>
+            </div>
+
+            <!-- Alternative Option -->
+            <div class="text-center" style="margin-top: 2rem;">
+                <p style="color: var(--text-secondary);">
+                    Prefer to describe symptoms naturally?
+                </p>
+                <a href="chatbot.html" class="btn btn-secondary" style="margin-top: 1rem;">
+                    Use AI Chatbot Instead
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="symptom-checker.js"></script>
+</body>
+
+</html>

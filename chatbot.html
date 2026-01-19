@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat with MediSense AI - Conversational symptom analysis">
+    <title>AI Chatbot - MediSense AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-icon">🏥</span>
+                MediSense AI
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="chatbot.html">AI Chatbot</a></li>
+                <li><a href="symptom-checker.html">Symptom Checker</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chatbot Section -->
+    <section class="section">
+        <div class="container">
+            <div class="chatbot-container">
+                <!-- Header -->
+                <div class="chatbot-header">
+                    <h2 style="margin: 0; color: white;">💬 AI Medical Assistant</h2>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 0.95rem;">
+                        Describe your symptoms naturally - I'll help analyze them
+                    </p>
+                </div>
+
+                <!-- Messages Area -->
+                <div class="chatbot-messages" id="chat-messages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+
+                <!-- Input Area -->
+                <div class="chatbot-input-area">
+                    <input type="text" class="chatbot-input" id="user-input" placeholder="Type your symptoms here..."
+                        autocomplete="off">
+                    <button class="chatbot-send-btn" id="send-btn">
+                        ➤
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="card" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">💡 Tips for Better Results</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Describe your symptoms in natural language - no need for medical terms</li>
+                    <li>Mention when symptoms started and how severe they are</li>
+                    <li>Include any relevant details like duration, frequency, or triggers</li>
+                    <li>Be honest and thorough - the AI needs complete information</li>
+                    <li>Answer the follow-up questions the chatbot asks</li>
+                </ul>
+            </div>
+
+            <!-- Alternative Option -->
+            <div class="text-center" style="margin-top: 2rem;">
+                <p style="color: var(--text-secondary);">
+                    Prefer a structured approach?
+                </p>
+                <a href="symptom-checker.html" class="btn btn-secondary" style="margin-top: 1rem;">
+                    Use Symptom Checker Instead
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
